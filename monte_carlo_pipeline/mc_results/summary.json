@@ -1,0 +1,11 @@
+﻿{
+    "num_students":  56,
+    "total_predictions":  66,
+    "best_accuracy":  50,
+    "worst_accuracy":  0,
+    "average_accuracy":  23.48,
+    "test_days":  131,
+    "std_deviation":  11.5969,
+    "train_days":  1177,
+    "model_type":  "Monte Carlo Simulation"
+}

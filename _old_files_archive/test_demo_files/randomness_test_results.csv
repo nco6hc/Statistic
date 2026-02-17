@@ -1,0 +1,2 @@
+chi_square_pvalue,chi_square_reject,runs_test_pvalue,runs_test_reject,ks_test_pvalue,ks_test_reject,interval_test_pvalue,interval_test_reject
+0.6096808077781192,False,0.19273934504358148,False,7.504192061607179e-07,True,4.715631480551986e-85,True
