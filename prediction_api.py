@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent / 'dl_pipeline'))
 
 import torch
 from dl_pipeline.data_loader import DataManager
-from dl_pipeline.models import LSTMStudentPredictor
+from dl_pipeline.enhanced_models import EnhancedLSTMPredictor
 from dl_pipeline.trainer import Trainer
 from dl_pipeline.prediction_service import PredictionService
 
@@ -25,19 +25,20 @@ from dl_pipeline.prediction_service import PredictionService
 class PredictionAPI:
     """High-level API for prediction service"""
     
-    def __init__(self, model_path: str = 'dl_pipeline/dl_checkpoints/final_online_model.pth',
+    def __init__(self, model_path: str = 'dl_pipeline/dl_checkpoints/enhanced_best_model.pth',
                  data_path: str = 'Database.xlsx',
                  predictions_dir: str = 'predictions'):
         """
         Initialize the prediction API.
         
         Args:
-            model_path: Path to trained model checkpoint
+            model_path: Path to trained Enhanced LSTM model checkpoint
             data_path: Path to Excel database
             predictions_dir: Directory to store predictions and corrections
         """
         print("="*70)
         print("INITIALIZING PREDICTION API")
+        print("(Enhanced LSTM - BiLSTM + Attention + Enriched Features)")
         print("="*70)
         
         # Load data
@@ -46,19 +47,38 @@ class PredictionAPI:
         self.data_manager.data = self.data_manager.load_data()
         self.data_manager.convert_to_binary()
         self.data_manager.sort_by_days()
-        print(f"   ✓ Loaded {len(self.data_manager.binary_vectors)} days of data")
+        print(f"   + Loaded {len(self.data_manager.binary_vectors)} days of data")
         
-        # Load model
-        print("\n2. Loading model...")
-        self.model = LSTMStudentPredictor(n_students=55)
+        # Load Enhanced LSTM model
+        print("\n2. Loading Enhanced LSTM model...")
+        
+        # Determine n_features from checkpoint or default to 220
+        n_features = 220  # Default: 55 raw + 55 freq_7 + 55 freq_14 + 55 recency
         
         if Path(model_path).exists():
             checkpoint = torch.load(model_path, map_location='cpu', weights_only=False)
-            self.model.load_state_dict(checkpoint['model_state_dict'])
-            print(f"   ✓ Model loaded from {model_path}")
+            n_features = checkpoint.get('n_features', 220)
+            print(f"   + Checkpoint found: {model_path}")
+            print(f"   + Input features: {n_features}")
         else:
-            print(f"   ⚠ No checkpoint found at {model_path}")
-            print(f"   Using untrained model")
+            checkpoint = None
+        
+        self.model = EnhancedLSTMPredictor(
+            n_features=n_features,
+            n_students=55,
+            hidden_size=128,
+            num_layers=2,
+            dropout=0.3
+        )
+        
+        if checkpoint is not None:
+            self.model.load_state_dict(checkpoint['model_state_dict'])
+            print(f"   + Model weights loaded successfully")
+            n_params = sum(p.numel() for p in self.model.parameters())
+            print(f"   + Parameters: {n_params:,}")
+        else:
+            print(f"   ! No checkpoint found at {model_path}")
+            print(f"   Using untrained Enhanced LSTM model")
         
         # Create trainer and service
         print("\n3. Initializing service...")

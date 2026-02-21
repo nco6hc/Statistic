@@ -1,0 +1,28 @@
+{
+  "model_type": "Ensemble (BiLSTM + Transformer + CNN-LSTM)",
+  "components": [
+    "Enhanced BiLSTM + Attention",
+    "Transformer (3-layer)",
+    "CNN-LSTM"
+  ],
+  "total_parameters": 2289573,
+  "simulation_time_seconds": 22.958502531051636,
+  "results": {
+    "average_accuracy": 26.666666666666664,
+    "best_accuracy": 50.0,
+    "worst_accuracy": 16.666666666666664,
+    "std_deviation": 11.055415967851333,
+    "total_predictions": 50,
+    "distribution": {
+      "0": 0.0,
+      "1": 50.0,
+      "2": 40.0,
+      "3": 10.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0
+    },
+    "first_10_avg": 23.33333333333333,
+    "last_10_avg": 31.666666666666664
+  }
+}

@@ -1,0 +1,705 @@
+{
+  "model_type": "Enhanced LSTM (BiLSTM + Attention + Focal Loss)",
+  "improvements": [
+    "Feature Engineering (220 features)",
+    "Bidirectional LSTM",
+    "Attention Mechanism",
+    "Focal Loss (alpha=0.25, gamma=2.0)",
+    "Label Smoothing (0.05)"
+  ],
+  "config": {
+    "excel_path": "../Database.xlsx",
+    "sequence_length": 14,
+    "batch_size": 32,
+    "epochs": 50,
+    "learning_rate": 0.0005,
+    "weight_decay": 1e-05,
+    "early_stopping_patience": 15,
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.3,
+    "train_ratio": 0.9,
+    "n_simulation_days": 100,
+    "prediction_interval": 2,
+    "n_groups": 5,
+    "k_students": 6,
+    "temperature": 1.5,
+    "online_lr": 0.0003,
+    "online_iterations": 5,
+    "replay_buffer_size": 10,
+    "replay_min_samples": 5,
+    "n_students": 55
+  },
+  "parameters": 827319,
+  "training_time_seconds": 31.615493774414062,
+  "results": {
+    "average_accuracy": 28.333333333333325,
+    "best_accuracy": 50.0,
+    "worst_accuracy": 0.0,
+    "std_deviation": 12.133516482134196,
+    "total_predictions": 50,
+    "distribution": {
+      "0": 2.0,
+      "1": 40.0,
+      "2": 44.0,
+      "3": 14.000000000000002,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0
+    },
+    "first_10_avg": 24.999999999999993,
+    "last_10_avg": 23.333333333333325
+  },
+  "predictions": [
+    {
+      "day": 1,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        5,
+        7,
+        17,
+        22,
+        32,
+        33
+      ]
+    },
+    {
+      "day": 3,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        9,
+        13,
+        17,
+        18,
+        46,
+        50
+      ]
+    },
+    {
+      "day": 5,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        24,
+        25,
+        26,
+        29,
+        36,
+        48
+      ]
+    },
+    {
+      "day": 7,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        33,
+        35,
+        45,
+        52,
+        53,
+        55
+      ]
+    },
+    {
+      "day": 9,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        3,
+        6,
+        29,
+        37,
+        44,
+        49
+      ]
+    },
+    {
+      "day": 11,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        2,
+        6,
+        8,
+        34,
+        39,
+        43
+      ]
+    },
+    {
+      "day": 13,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        16,
+        32,
+        33,
+        37,
+        40,
+        48
+      ]
+    },
+    {
+      "day": 15,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        1,
+        7,
+        20,
+        23,
+        25,
+        38
+      ]
+    },
+    {
+      "day": 17,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        23,
+        26,
+        29,
+        31,
+        36,
+        54
+      ]
+    },
+    {
+      "day": 19,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        16,
+        18,
+        41,
+        43,
+        46,
+        55
+      ]
+    },
+    {
+      "day": 21,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        2,
+        10,
+        26,
+        27,
+        31,
+        38
+      ]
+    },
+    {
+      "day": 23,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        4,
+        29,
+        35,
+        37,
+        42,
+        54
+      ]
+    },
+    {
+      "day": 25,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        12,
+        24,
+        33,
+        34,
+        36,
+        53
+      ]
+    },
+    {
+      "day": 27,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        20,
+        21,
+        39,
+        42,
+        51,
+        53
+      ]
+    },
+    {
+      "day": 29,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        5,
+        27,
+        35,
+        39,
+        46,
+        52
+      ]
+    },
+    {
+      "day": 31,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        1,
+        30,
+        38,
+        45,
+        48,
+        50
+      ]
+    },
+    {
+      "day": 33,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        11,
+        40,
+        43,
+        46,
+        49,
+        55
+      ]
+    },
+    {
+      "day": 35,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        15,
+        20,
+        23,
+        28,
+        39,
+        49
+      ]
+    },
+    {
+      "day": 37,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        9,
+        20,
+        27,
+        31,
+        48,
+        49
+      ]
+    },
+    {
+      "day": 39,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        2,
+        6,
+        13,
+        22,
+        40,
+        48
+      ]
+    },
+    {
+      "day": 41,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        4,
+        5,
+        7,
+        17,
+        20,
+        38
+      ]
+    },
+    {
+      "day": 43,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        5,
+        7,
+        24,
+        32,
+        45,
+        49
+      ]
+    },
+    {
+      "day": 45,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        1,
+        2,
+        21,
+        24,
+        50,
+        52
+      ]
+    },
+    {
+      "day": 47,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        9,
+        25,
+        26,
+        30,
+        42,
+        54
+      ]
+    },
+    {
+      "day": 49,
+      "best_overlap": 0,
+      "best_accuracy": 0.0,
+      "actual": [
+        21,
+        22,
+        29,
+        37,
+        41,
+        50
+      ]
+    },
+    {
+      "day": 51,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        12,
+        29,
+        42,
+        48,
+        54,
+        55
+      ]
+    },
+    {
+      "day": 53,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        15,
+        19,
+        24,
+        51,
+        53,
+        55
+      ]
+    },
+    {
+      "day": 55,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        1,
+        10,
+        30,
+        44,
+        45,
+        50
+      ]
+    },
+    {
+      "day": 57,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        2,
+        7,
+        15,
+        16,
+        41,
+        45
+      ]
+    },
+    {
+      "day": 59,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        6,
+        27,
+        33,
+        41,
+        42,
+        49
+      ]
+    },
+    {
+      "day": 61,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        4,
+        7,
+        30,
+        35,
+        37,
+        45
+      ]
+    },
+    {
+      "day": 63,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        4,
+        11,
+        24,
+        35,
+        41,
+        45
+      ]
+    },
+    {
+      "day": 65,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        4,
+        7,
+        8,
+        34,
+        37,
+        47
+      ]
+    },
+    {
+      "day": 67,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        7,
+        18,
+        26,
+        29,
+        31,
+        35
+      ]
+    },
+    {
+      "day": 69,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        7,
+        8,
+        9,
+        13,
+        28,
+        44
+      ]
+    },
+    {
+      "day": 71,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        2,
+        3,
+        20,
+        25,
+        38,
+        44
+      ]
+    },
+    {
+      "day": 73,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        11,
+        12,
+        22,
+        28,
+        46,
+        50
+      ]
+    },
+    {
+      "day": 75,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        5,
+        34,
+        35,
+        42,
+        49,
+        52
+      ]
+    },
+    {
+      "day": 77,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        27,
+        38,
+        40,
+        42,
+        46,
+        55
+      ]
+    },
+    {
+      "day": 79,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        5,
+        13,
+        26,
+        37,
+        53,
+        55
+      ]
+    },
+    {
+      "day": 81,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        2,
+        9,
+        16,
+        46,
+        52,
+        55
+      ]
+    },
+    {
+      "day": 83,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        5,
+        8,
+        23,
+        37,
+        38,
+        54
+      ]
+    },
+    {
+      "day": 85,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        1,
+        16,
+        22,
+        25,
+        47,
+        48
+      ]
+    },
+    {
+      "day": 87,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        12,
+        26,
+        33,
+        35,
+        36,
+        44
+      ]
+    },
+    {
+      "day": 89,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        19,
+        32,
+        36,
+        37,
+        42,
+        54
+      ]
+    },
+    {
+      "day": 91,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        3,
+        9,
+        12,
+        21,
+        51,
+        52
+      ]
+    },
+    {
+      "day": 93,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        13,
+        18,
+        35,
+        36,
+        41,
+        48
+      ]
+    },
+    {
+      "day": 95,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        1,
+        2,
+        9,
+        13,
+        32,
+        35
+      ]
+    },
+    {
+      "day": 97,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        6,
+        15,
+        17,
+        24,
+        40,
+        45
+      ]
+    },
+    {
+      "day": 99,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        14,
+        18,
+        29,
+        35,
+        44,
+        49
+      ]
+    }
+  ]
+}

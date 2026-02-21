@@ -16,7 +16,8 @@ from collections import defaultdict
 
 from .data_loader import DataManager
 from .trainer import Trainer
-from .models import LSTMStudentPredictor
+from .enhanced_models import EnhancedLSTMPredictor
+from .enhanced_features import build_enriched_features
 
 
 class PredictionService:
@@ -29,13 +30,13 @@ class PredictionService:
     3. update_model() - Update model with collected corrections
     """
     
-    def __init__(self, model: LSTMStudentPredictor, trainer: Trainer, 
+    def __init__(self, model: EnhancedLSTMPredictor, trainer: Trainer, 
                  data_manager: DataManager, checkpoint_dir: str = 'predictions'):
         """
         Initialize prediction service.
         
         Args:
-            model: Trained prediction model
+            model: Trained Enhanced LSTM prediction model
             trainer: Trainer instance
             data_manager: Data manager with historical data
             checkpoint_dir: Directory to store predictions and corrections
@@ -46,12 +47,24 @@ class PredictionService:
         self.checkpoint_dir = Path(checkpoint_dir)
         self.checkpoint_dir.mkdir(exist_ok=True)
         
+        # Build enriched features from all historical data
+        self._rebuild_enriched_features()
+        
         # Tracking structures
         self.pending_predictions = {}  # day -> prediction_data
         self.completed_predictions = {}  # day -> (prediction_data, actual_students)
         
         # Load existing predictions if available
         self._load_state()
+    
+    def _rebuild_enriched_features(self):
+        """Rebuild enriched features (220-dim) from binary data."""
+        if self.data_manager.binary_vectors is not None:
+            self.enriched_features = build_enriched_features(
+                self.data_manager.binary_vectors
+            )
+        else:
+            self.enriched_features = None
     
     def predict_for_day(self, day_number: int, n_groups: int = 5, 
                        save: bool = True) -> Dict:
@@ -79,11 +92,12 @@ class PredictionService:
             print(f"⚠ Day {day_number} already completed")
             return self.completed_predictions[day_number][0]
         
-        # Get recent sequence for prediction
-        recent_sequence = self.data_manager.get_recent_sequence(n_days=14)
+        # Build enriched features from full binary history and get last 14 days
+        self._rebuild_enriched_features()
+        recent_enriched = self.enriched_features[-14:]
         
-        # Convert to tensor
-        X = torch.FloatTensor(recent_sequence).unsqueeze(0)
+        # Convert to tensor (220 features per timestep)
+        X = torch.FloatTensor(recent_enriched).unsqueeze(0)
         
         # Make prediction
         all_groups, probabilities = self.trainer.predict(X, k=6, n_groups=n_groups)
@@ -212,6 +226,9 @@ class PredictionService:
         # Add to data manager for future predictions
         self.data_manager.append_new_selection(actual_students, day_number=day_number)
         
+        # Rebuild enriched features with the new data point
+        self._rebuild_enriched_features()
+        
         # Save back to Excel database
         try:
             self.data_manager.save_to_excel()
@@ -262,6 +279,9 @@ class PredictionService:
         print(f"\nTraining on {len(days)} corrections:")
         print(f"  Days: {days}")
         
+        # Rebuild enriched features from full history
+        self._rebuild_enriched_features()
+        
         # Prepare training data from corrections
         sequences = []
         targets = []
@@ -270,26 +290,26 @@ class PredictionService:
             _, correction_data = self.completed_predictions[day]
             actual_students = correction_data['actual_students']
             
-            # Get sequence before this day
-            # Note: This assumes data_manager has been updated with all corrections
-            recent_seq = self.data_manager.get_recent_sequence(n_days=14)
+            # Get enriched sequence (last 14 days)
+            recent_enriched = self.enriched_features[-14:]
             
             # Create binary target
             target = np.zeros(55, dtype=np.float32)
             for student_id in actual_students:
                 target[student_id - 1] = 1
             
-            sequences.append(recent_seq)
+            sequences.append(recent_enriched)
             targets.append(target)
         
         # Convert to tensors
         X = torch.FloatTensor(np.array(sequences))
         y = torch.FloatTensor(np.array(targets))
         
-        # Update model
+        # Update model with FocalLoss (same as training)
+        from .enhanced_models import FocalLoss
         self.model.train()
         optimizer = torch.optim.Adam(self.model.parameters(), lr=0.0001)
-        criterion = torch.nn.BCELoss()
+        criterion = FocalLoss(alpha=0.25, gamma=2.0, label_smoothing=0.05)
         
         losses = []
         for iteration in range(n_iterations):
