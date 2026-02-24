@@ -1,0 +1,96 @@
+{
+  "model_type": "LSTM + Markov Chain Hybrid (alpha=0.7)",
+  "best_alpha": 0.7,
+  "all_alpha_results": {
+    "0.5": {
+      "average_accuracy": 24.99999999999999,
+      "best_accuracy": 50.0,
+      "worst_accuracy": 0.0,
+      "std_deviation": 10.671873729054747,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 2.0,
+        "1": 52.0,
+        "2": 40.0,
+        "3": 6.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 24.999999999999996,
+      "last_10_avg": 30.0
+    },
+    "0.6": {
+      "average_accuracy": 25.33333333333332,
+      "best_accuracy": 50.0,
+      "worst_accuracy": 0.0,
+      "std_deviation": 10.923979738782625,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 2.0,
+        "1": 51.0,
+        "2": 40.0,
+        "3": 7.000000000000001,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 26.666666666666664,
+      "last_10_avg": 26.666666666666664
+    },
+    "0.7": {
+      "average_accuracy": 26.83333333333334,
+      "best_accuracy": 50.0,
+      "worst_accuracy": 0.0,
+      "std_deviation": 11.029002171043802,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 1.0,
+        "1": 46.0,
+        "2": 44.0,
+        "3": 9.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 24.999999999999996,
+      "last_10_avg": 34.99999999999999
+    },
+    "0.8": {
+      "average_accuracy": 25.166666666666664,
+      "best_accuracy": 66.66666666666666,
+      "worst_accuracy": 0.0,
+      "std_deviation": 11.901213756961468,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 3.0,
+        "1": 52.0,
+        "2": 37.0,
+        "3": 7.000000000000001,
+        "4": 1.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 21.66666666666666,
+      "last_10_avg": 28.333333333333332
+    }
+  },
+  "best_results": {
+    "average_accuracy": 26.83333333333334,
+    "best_accuracy": 50.0,
+    "worst_accuracy": 0.0,
+    "std_deviation": 11.029002171043802,
+    "total_predictions": 100,
+    "distribution": {
+      "0": 1.0,
+      "1": 46.0,
+      "2": 44.0,
+      "3": 9.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0
+    },
+    "first_10_avg": 24.999999999999996,
+    "last_10_avg": 34.99999999999999
+  }
+}

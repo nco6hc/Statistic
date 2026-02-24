@@ -1,0 +1,76 @@
+{
+  "model_type": "Ensemble LSTM + Markov Hybrid",
+  "components": [
+    "Enhanced BiLSTM+Attention",
+    "Transformer (3-layer)",
+    "CNN-LSTM",
+    "FactoredMarkovChain"
+  ],
+  "best_alpha": 0.5,
+  "alpha_results": {
+    "0.5": {
+      "average_accuracy": 26.66666666666666,
+      "best_accuracy": 66.66666666666666,
+      "worst_accuracy": 0.0,
+      "std_deviation": 11.78511301977579,
+      "total_predictions": 100,
+      "first_10_avg": 28.333333333333332,
+      "last_10_avg": 28.333333333333332,
+      "zero_days": 1,
+      "fifty_plus_days": 10
+    },
+    "0.6": {
+      "average_accuracy": 24.333333333333325,
+      "best_accuracy": 50.0,
+      "worst_accuracy": 0.0,
+      "std_deviation": 9.837569708915803,
+      "total_predictions": 100,
+      "first_10_avg": 23.33333333333333,
+      "last_10_avg": 23.33333333333333,
+      "zero_days": 1,
+      "fifty_plus_days": 4
+    },
+    "0.7": {
+      "average_accuracy": 24.83333333333333,
+      "best_accuracy": 50.0,
+      "worst_accuracy": 0.0,
+      "std_deviation": 10.136567466356647,
+      "total_predictions": 100,
+      "first_10_avg": 23.33333333333333,
+      "last_10_avg": 23.33333333333333,
+      "zero_days": 1,
+      "fifty_plus_days": 5
+    },
+    "0.8": {
+      "average_accuracy": 26.33333333333332,
+      "best_accuracy": 66.66666666666666,
+      "worst_accuracy": 0.0,
+      "std_deviation": 12.51221625274897,
+      "total_predictions": 100,
+      "first_10_avg": 23.33333333333333,
+      "last_10_avg": 28.333333333333332,
+      "zero_days": 3,
+      "fifty_plus_days": 9
+    }
+  },
+  "best_stats": {
+    "average_accuracy": 26.66666666666666,
+    "best_accuracy": 66.66666666666666,
+    "worst_accuracy": 0.0,
+    "std_deviation": 11.78511301977579,
+    "total_predictions": 100,
+    "distribution": {
+      "0": 1.0,
+      "1": 49.0,
+      "2": 40.0,
+      "3": 9.0,
+      "4": 1.0,
+      "5": 0.0,
+      "6": 0.0
+    },
+    "first_10_avg": 28.333333333333332,
+    "last_10_avg": 28.333333333333332,
+    "zero_days": 1,
+    "fifty_plus_days": 10
+  }
+}

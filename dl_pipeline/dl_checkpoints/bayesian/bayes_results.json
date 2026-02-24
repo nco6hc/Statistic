@@ -1,0 +1,52 @@
+{
+  "model_type": "Bayesian Beta-Binomial",
+  "config": {
+    "excel_path": "C:\\Workspace\\Develop\\Statistic\\Database.xlsx",
+    "train_ratio": 0.9,
+    "n_students": 55,
+    "k_per_day": 6,
+    "n_simulation_days": 100,
+    "prediction_interval": 1,
+    "n_groups": 5,
+    "random_seed": 42,
+    "prior_concentration": 2.0,
+    "decay": 0.97,
+    "cooling_penalty": 3.0,
+    "use_thompson": true,
+    "temperature": 1.2,
+    "empirical_bayes": true,
+    "eb_interval": 10
+  },
+  "fit_time_s": 0.0038394927978515625,
+  "sim_time_s": 0.022093772888183594,
+  "train_accuracy": 0.10421976777116965,
+  "results": {
+    "average_accuracy": 26.33333333333333,
+    "best_accuracy": 66.66666666666666,
+    "worst_accuracy": 0.0,
+    "std_deviation": 10.847426730181986,
+    "total_predictions": 100,
+    "distribution": {
+      "0": 1.0,
+      "1": 47.0,
+      "2": 46.0,
+      "3": 5.0,
+      "4": 1.0,
+      "5": 0.0,
+      "6": 0.0
+    },
+    "first_10_avg": 21.666666666666664,
+    "last_10_avg": 23.33333333333333
+  },
+  "final_posterior": {
+    "effective_n": 33.33333333333319,
+    "alpha_0": 16.373992356282756,
+    "beta_0": 183.62600764371723,
+    "mean_of_means": 0.08186376301854595,
+    "std_of_means": 0.0040134694931912825,
+    "min_mean": 0.07552708030367368,
+    "max_mean": 0.09145275075623156,
+    "mean_std": 0.017498978031647884,
+    "cooling_sum": 599.9999999999994
+  }
+}

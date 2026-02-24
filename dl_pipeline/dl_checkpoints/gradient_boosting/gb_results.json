@@ -1,0 +1,44 @@
+{
+  "model_type": "Gradient Boosting + Feature Engineering",
+  "n_features": 9,
+  "n_training_samples": 64735,
+  "training_time_s": 2.0018467903137207,
+  "simulation_time_s": 1.0634617805480957,
+  "config": {
+    "excel_path": "C:\\Workspace\\Develop\\Statistic\\Database.xlsx",
+    "train_ratio": 0.9,
+    "n_students": 55,
+    "n_simulation_days": 100,
+    "prediction_interval": 1,
+    "n_groups": 5,
+    "k_students": 6,
+    "temperature": 1.5,
+    "update_interval": 10,
+    "train_window": 300,
+    "random_seed": 42,
+    "max_iter": 300,
+    "learning_rate": 0.05,
+    "max_depth": 5,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.0,
+    "pos_weight": 9.0
+  },
+  "results": {
+    "average_accuracy": 24.333333333333325,
+    "best_accuracy": 50.0,
+    "worst_accuracy": 0.0,
+    "std_deviation": 11.160446028522136,
+    "total_predictions": 100,
+    "distribution": {
+      "0": 4.0,
+      "1": 52.0,
+      "2": 38.0,
+      "3": 6.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0
+    },
+    "first_10_avg": 26.666666666666664,
+    "last_10_avg": 18.333333333333332
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "model_type": "Meta-Ensemble (Markov + XGB + Logistic + LSTM)",
+  "config": {
+    "excel_path": "C:\\Workspace\\Develop\\Statistic\\Database.xlsx",
+    "train_ratio": 0.9,
+    "n_students": 55,
+    "k_per_day": 6,
+    "n_simulation_days": 100,
+    "prediction_interval": 1,
+    "n_groups": 5,
+    "random_seed": 42,
+    "lstm_hidden": 64,
+    "lstm_epochs": 20,
+    "lstm_seq_len": 14,
+    "ema_alpha": 0.15,
+    "ensemble_temperature": 0.5
+  },
+  "sim_time_s": 1.0853612422943115,
+  "final_weights": {
+    "Markov": 0.26467681614710686,
+    "XGBoost": 0.25116793245422997,
+    "Logistic": 0.2691830019438422,
+    "LSTM": 0.21497224945482096
+  },
+  "per_model_results": {
+    "Markov": {
+      "average_accuracy": 24.66666666666666,
+      "best_accuracy": 66.66666666666666,
+      "worst_accuracy": 0.0,
+      "std_deviation": 11.421227799341208,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 3.0,
+        "1": 53.0,
+        "2": 38.0,
+        "3": 5.0,
+        "4": 1.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 19.999999999999993,
+      "last_10_avg": 18.333333333333332
+    },
+    "XGBoost": {
+      "average_accuracy": 22.999999999999996,
+      "best_accuracy": 50.0,
+      "worst_accuracy": 0.0,
+      "std_deviation": 9.363047936792091,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 1.0,
+        "1": 63.0,
+        "2": 33.0,
+        "3": 3.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 21.666666666666664,
+      "last_10_avg": 21.666666666666664
+    },
+    "Logistic": {
+      "average_accuracy": 25.16666666666667,
+      "best_accuracy": 50.0,
+      "worst_accuracy": 0.0,
+      "std_deviation": 9.57282032051625,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 1.0,
+        "1": 50.0,
+        "2": 46.0,
+        "3": 3.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 24.999999999999996,
+      "last_10_avg": 24.999999999999993
+    },
+    "LSTM": {
+      "average_accuracy": 25.16666666666666,
+      "best_accuracy": 50.0,
+      "worst_accuracy": 0.0,
+      "std_deviation": 11.179097558489335,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 4.0,
+        "1": 47.0,
+        "2": 43.0,
+        "3": 6.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 28.333333333333332,
+      "last_10_avg": 28.333333333333332
+    },
+    "Meta-Ensemble": {
+      "average_accuracy": 24.83333333333333,
+      "best_accuracy": 66.66666666666666,
+      "worst_accuracy": 16.666666666666664,
+      "std_deviation": 10.406995510499442,
+      "total_predictions": 100,
+      "distribution": {
+        "0": 0.0,
+        "1": 56.99999999999999,
+        "2": 38.0,
+        "3": 4.0,
+        "4": 1.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "first_10_avg": 21.66666666666666,
+      "last_10_avg": 24.999999999999993
+    }
+  }
+}

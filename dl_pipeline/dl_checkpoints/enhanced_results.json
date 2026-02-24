@@ -20,7 +20,7 @@
     "dropout": 0.3,
     "train_ratio": 0.9,
     "n_simulation_days": 100,
-    "prediction_interval": 2,
+    "prediction_interval": 1,
     "n_groups": 5,
     "k_students": 6,
     "temperature": 1.5,
@@ -31,24 +31,24 @@
     "n_students": 55
   },
   "parameters": 827319,
-  "training_time_seconds": 31.615493774414062,
+  "training_time_seconds": 28.258808135986328,
   "results": {
-    "average_accuracy": 28.333333333333325,
+    "average_accuracy": 24.999999999999996,
     "best_accuracy": 50.0,
     "worst_accuracy": 0.0,
-    "std_deviation": 12.133516482134196,
-    "total_predictions": 50,
+    "std_deviation": 9.574271077563383,
+    "total_predictions": 100,
     "distribution": {
       "0": 2.0,
-      "1": 40.0,
-      "2": 44.0,
-      "3": 14.000000000000002,
+      "1": 48.0,
+      "2": 48.0,
+      "3": 2.0,
       "4": 0.0,
       "5": 0.0,
       "6": 0.0
     },
-    "first_10_avg": 24.999999999999993,
-    "last_10_avg": 23.333333333333325
+    "first_10_avg": 24.999999999999996,
+    "last_10_avg": 33.33333333333333
   },
   "predictions": [
     {
@@ -65,6 +65,19 @@
       ]
     },
     {
+      "day": 2,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        3,
+        15,
+        18,
+        25,
+        26,
+        29
+      ]
+    },
+    {
       "day": 3,
       "best_overlap": 1,
       "best_accuracy": 16.666666666666664,
@@ -75,6 +88,19 @@
         18,
         46,
         50
+      ]
+    },
+    {
+      "day": 4,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        7,
+        12,
+        28,
+        31,
+        40,
+        44
       ]
     },
     {
@@ -91,9 +117,22 @@
       ]
     },
     {
+      "day": 6,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        4,
+        5,
+        8,
+        17,
+        35,
+        47
+      ]
+    },
+    {
       "day": 7,
-      "best_overlap": 3,
-      "best_accuracy": 50.0,
+      "best_overlap": 0,
+      "best_accuracy": 0.0,
       "actual": [
         33,
         35,
@@ -104,9 +143,22 @@
       ]
     },
     {
-      "day": 9,
+      "day": 8,
       "best_overlap": 1,
       "best_accuracy": 16.666666666666664,
+      "actual": [
+        13,
+        31,
+        38,
+        45,
+        53,
+        55
+      ]
+    },
+    {
+      "day": 9,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         3,
         6,
@@ -114,6 +166,19 @@
         37,
         44,
         49
+      ]
+    },
+    {
+      "day": 10,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        1,
+        9,
+        26,
+        38,
+        54,
+        55
       ]
     },
     {
@@ -130,6 +195,19 @@
       ]
     },
     {
+      "day": 12,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        3,
+        16,
+        23,
+        24,
+        38,
+        42
+      ]
+    },
+    {
       "day": 13,
       "best_overlap": 2,
       "best_accuracy": 33.33333333333333,
@@ -140,6 +218,19 @@
         37,
         40,
         48
+      ]
+    },
+    {
+      "day": 14,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        23,
+        27,
+        33,
+        37,
+        39,
+        49
       ]
     },
     {
@@ -156,6 +247,19 @@
       ]
     },
     {
+      "day": 16,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        12,
+        19,
+        22,
+        29,
+        32,
+        46
+      ]
+    },
+    {
       "day": 17,
       "best_overlap": 1,
       "best_accuracy": 16.666666666666664,
@@ -169,6 +273,19 @@
       ]
     },
     {
+      "day": 18,
+      "best_overlap": 0,
+      "best_accuracy": 0.0,
+      "actual": [
+        17,
+        18,
+        24,
+        40,
+        41,
+        46
+      ]
+    },
+    {
       "day": 19,
       "best_overlap": 1,
       "best_accuracy": 16.666666666666664,
@@ -178,6 +295,19 @@
         41,
         43,
         46,
+        55
+      ]
+    },
+    {
+      "day": 20,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        4,
+        17,
+        19,
+        35,
+        49,
         55
       ]
     },
@@ -195,6 +325,19 @@
       ]
     },
     {
+      "day": 22,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        2,
+        10,
+        14,
+        26,
+        45,
+        54
+      ]
+    },
+    {
       "day": 23,
       "best_overlap": 1,
       "best_accuracy": 16.666666666666664,
@@ -208,9 +351,22 @@
       ]
     },
     {
+      "day": 24,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        1,
+        22,
+        25,
+        31,
+        36,
+        48
+      ]
+    },
+    {
       "day": 25,
-      "best_overlap": 1,
-      "best_accuracy": 16.666666666666664,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         12,
         24,
@@ -221,14 +377,40 @@
       ]
     },
     {
-      "day": 27,
+      "day": 26,
       "best_overlap": 2,
       "best_accuracy": 33.33333333333333,
+      "actual": [
+        7,
+        9,
+        17,
+        25,
+        31,
+        32
+      ]
+    },
+    {
+      "day": 27,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         20,
         21,
         39,
         42,
+        51,
+        53
+      ]
+    },
+    {
+      "day": 28,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        3,
+        7,
+        31,
+        43,
         51,
         53
       ]
@@ -247,9 +429,22 @@
       ]
     },
     {
+      "day": 30,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        9,
+        13,
+        14,
+        15,
+        54,
+        55
+      ]
+    },
+    {
       "day": 31,
-      "best_overlap": 3,
-      "best_accuracy": 50.0,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         1,
         30,
@@ -257,6 +452,19 @@
         45,
         48,
         50
+      ]
+    },
+    {
+      "day": 32,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        1,
+        8,
+        24,
+        33,
+        34,
+        41
       ]
     },
     {
@@ -273,6 +481,19 @@
       ]
     },
     {
+      "day": 34,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        3,
+        14,
+        28,
+        35,
+        50,
+        52
+      ]
+    },
+    {
       "day": 35,
       "best_overlap": 2,
       "best_accuracy": 33.33333333333333,
@@ -282,6 +503,19 @@
         23,
         28,
         39,
+        49
+      ]
+    },
+    {
+      "day": 36,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        1,
+        2,
+        17,
+        46,
+        47,
         49
       ]
     },
@@ -299,9 +533,22 @@
       ]
     },
     {
+      "day": 38,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        14,
+        17,
+        18,
+        23,
+        41,
+        52
+      ]
+    },
+    {
       "day": 39,
-      "best_overlap": 2,
-      "best_accuracy": 33.33333333333333,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         2,
         6,
@@ -312,9 +559,22 @@
       ]
     },
     {
+      "day": 40,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        4,
+        10,
+        32,
+        37,
+        47,
+        52
+      ]
+    },
+    {
       "day": 41,
-      "best_overlap": 3,
-      "best_accuracy": 50.0,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         4,
         5,
@@ -325,9 +585,22 @@
       ]
     },
     {
+      "day": 42,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        8,
+        16,
+        23,
+        28,
+        44,
+        49
+      ]
+    },
+    {
       "day": 43,
-      "best_overlap": 2,
-      "best_accuracy": 33.33333333333333,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         5,
         7,
@@ -335,6 +608,19 @@
         32,
         45,
         49
+      ]
+    },
+    {
+      "day": 44,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        11,
+        14,
+        32,
+        36,
+        42,
+        48
       ]
     },
     {
@@ -351,9 +637,22 @@
       ]
     },
     {
+      "day": 46,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        16,
+        22,
+        28,
+        29,
+        35,
+        43
+      ]
+    },
+    {
       "day": 47,
-      "best_overlap": 3,
-      "best_accuracy": 50.0,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         9,
         25,
@@ -364,9 +663,22 @@
       ]
     },
     {
+      "day": 48,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        8,
+        10,
+        19,
+        25,
+        36,
+        46
+      ]
+    },
+    {
       "day": 49,
-      "best_overlap": 0,
-      "best_accuracy": 0.0,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         21,
         22,
@@ -377,9 +689,22 @@
       ]
     },
     {
+      "day": 50,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        1,
+        20,
+        29,
+        31,
+        43,
+        53
+      ]
+    },
+    {
       "day": 51,
-      "best_overlap": 2,
-      "best_accuracy": 33.33333333333333,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         12,
         29,
@@ -390,9 +715,22 @@
       ]
     },
     {
+      "day": 52,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        1,
+        7,
+        8,
+        9,
+        39,
+        43
+      ]
+    },
+    {
       "day": 53,
-      "best_overlap": 3,
-      "best_accuracy": 50.0,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         15,
         19,
@@ -403,9 +741,22 @@
       ]
     },
     {
+      "day": 54,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        21,
+        26,
+        36,
+        38,
+        40,
+        50
+      ]
+    },
+    {
       "day": 55,
-      "best_overlap": 3,
-      "best_accuracy": 50.0,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         1,
         10,
@@ -413,6 +764,19 @@
         44,
         45,
         50
+      ]
+    },
+    {
+      "day": 56,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        3,
+        10,
+        15,
+        23,
+        41,
+        53
       ]
     },
     {
@@ -429,9 +793,22 @@
       ]
     },
     {
+      "day": 58,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        12,
+        24,
+        28,
+        30,
+        36,
+        39
+      ]
+    },
+    {
       "day": 59,
-      "best_overlap": 1,
-      "best_accuracy": 16.666666666666664,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         6,
         27,
@@ -439,6 +816,19 @@
         41,
         42,
         49
+      ]
+    },
+    {
+      "day": 60,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        3,
+        21,
+        25,
+        26,
+        51,
+        55
       ]
     },
     {
@@ -455,9 +845,22 @@
       ]
     },
     {
-      "day": 63,
+      "day": 62,
       "best_overlap": 2,
       "best_accuracy": 33.33333333333333,
+      "actual": [
+        18,
+        25,
+        28,
+        46,
+        50,
+        51
+      ]
+    },
+    {
+      "day": 63,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         4,
         11,
@@ -465,6 +868,19 @@
         35,
         41,
         45
+      ]
+    },
+    {
+      "day": 64,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        1,
+        7,
+        31,
+        35,
+        46,
+        55
       ]
     },
     {
@@ -481,9 +897,22 @@
       ]
     },
     {
+      "day": 66,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        8,
+        9,
+        36,
+        37,
+        39,
+        50
+      ]
+    },
+    {
       "day": 67,
-      "best_overlap": 2,
-      "best_accuracy": 33.33333333333333,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         7,
         18,
@@ -491,6 +920,19 @@
         29,
         31,
         35
+      ]
+    },
+    {
+      "day": 68,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        7,
+        11,
+        13,
+        18,
+        26,
+        42
       ]
     },
     {
@@ -507,6 +949,19 @@
       ]
     },
     {
+      "day": 70,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        22,
+        23,
+        27,
+        35,
+        37,
+        46
+      ]
+    },
+    {
       "day": 71,
       "best_overlap": 1,
       "best_accuracy": 16.666666666666664,
@@ -517,6 +972,19 @@
         25,
         38,
         44
+      ]
+    },
+    {
+      "day": 72,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        5,
+        23,
+        37,
+        41,
+        43,
+        53
       ]
     },
     {
@@ -533,6 +1001,19 @@
       ]
     },
     {
+      "day": 74,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        6,
+        7,
+        8,
+        21,
+        32,
+        39
+      ]
+    },
+    {
       "day": 75,
       "best_overlap": 2,
       "best_accuracy": 33.33333333333333,
@@ -546,9 +1027,22 @@
       ]
     },
     {
+      "day": 76,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        3,
+        14,
+        26,
+        35,
+        44,
+        54
+      ]
+    },
+    {
       "day": 77,
-      "best_overlap": 3,
-      "best_accuracy": 50.0,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         27,
         38,
@@ -559,9 +1053,22 @@
       ]
     },
     {
+      "day": 78,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        9,
+        37,
+        45,
+        50,
+        53,
+        54
+      ]
+    },
+    {
       "day": 79,
-      "best_overlap": 1,
-      "best_accuracy": 16.666666666666664,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         5,
         13,
@@ -572,9 +1079,22 @@
       ]
     },
     {
-      "day": 81,
+      "day": 80,
       "best_overlap": 1,
       "best_accuracy": 16.666666666666664,
+      "actual": [
+        2,
+        19,
+        39,
+        49,
+        51,
+        53
+      ]
+    },
+    {
+      "day": 81,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         2,
         9,
@@ -582,6 +1102,19 @@
         46,
         52,
         55
+      ]
+    },
+    {
+      "day": 82,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        1,
+        2,
+        3,
+        18,
+        25,
+        50
       ]
     },
     {
@@ -598,9 +1131,22 @@
       ]
     },
     {
-      "day": 85,
+      "day": 84,
       "best_overlap": 2,
       "best_accuracy": 33.33333333333333,
+      "actual": [
+        11,
+        12,
+        26,
+        42,
+        50,
+        54
+      ]
+    },
+    {
+      "day": 85,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
       "actual": [
         1,
         16,
@@ -611,9 +1157,22 @@
       ]
     },
     {
+      "day": 86,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        20,
+        24,
+        29,
+        41,
+        47,
+        49
+      ]
+    },
+    {
       "day": 87,
-      "best_overlap": 1,
-      "best_accuracy": 16.666666666666664,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         12,
         26,
@@ -621,6 +1180,19 @@
         35,
         36,
         44
+      ]
+    },
+    {
+      "day": 88,
+      "best_overlap": 1,
+      "best_accuracy": 16.666666666666664,
+      "actual": [
+        2,
+        3,
+        6,
+        23,
+        34,
+        36
       ]
     },
     {
@@ -637,9 +1209,22 @@
       ]
     },
     {
+      "day": 90,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        2,
+        8,
+        12,
+        44,
+        46,
+        52
+      ]
+    },
+    {
       "day": 91,
-      "best_overlap": 1,
-      "best_accuracy": 16.666666666666664,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         3,
         9,
@@ -650,9 +1235,22 @@
       ]
     },
     {
-      "day": 93,
+      "day": 92,
       "best_overlap": 1,
       "best_accuracy": 16.666666666666664,
+      "actual": [
+        7,
+        13,
+        24,
+        45,
+        47,
+        52
+      ]
+    },
+    {
+      "day": 93,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         13,
         18,
@@ -663,9 +1261,22 @@
       ]
     },
     {
+      "day": 94,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        2,
+        10,
+        15,
+        30,
+        34,
+        50
+      ]
+    },
+    {
       "day": 95,
-      "best_overlap": 1,
-      "best_accuracy": 16.666666666666664,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
       "actual": [
         1,
         2,
@@ -673,6 +1284,19 @@
         13,
         32,
         35
+      ]
+    },
+    {
+      "day": 96,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        4,
+        9,
+        13,
+        16,
+        18,
+        49
       ]
     },
     {
@@ -689,6 +1313,19 @@
       ]
     },
     {
+      "day": 98,
+      "best_overlap": 3,
+      "best_accuracy": 50.0,
+      "actual": [
+        1,
+        26,
+        36,
+        40,
+        50,
+        54
+      ]
+    },
+    {
       "day": 99,
       "best_overlap": 2,
       "best_accuracy": 33.33333333333333,
@@ -699,6 +1336,19 @@
         35,
         44,
         49
+      ]
+    },
+    {
+      "day": 100,
+      "best_overlap": 2,
+      "best_accuracy": 33.33333333333333,
+      "actual": [
+        5,
+        8,
+        11,
+        31,
+        37,
+        42
       ]
     }
   ]

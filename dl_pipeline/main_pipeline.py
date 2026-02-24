@@ -275,7 +275,7 @@ def main():
         'epochs': 30,
         'batch_size': 32,
         'device': 'cuda' if torch.cuda.is_available() else 'cpu',
-        'prediction_interval': 2,
+        'prediction_interval': 1,
         'n_simulation_days': 100
     }
     

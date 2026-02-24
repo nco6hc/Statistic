@@ -52,7 +52,7 @@ CONFIG = {
     'dropout': 0.3,
     'train_ratio': 0.9,
     'n_simulation_days': 100,
-    'prediction_interval': 2,
+    'prediction_interval': 1,
     'n_groups': 5,
     'k_students': 6,
     'temperature': 1.5,
