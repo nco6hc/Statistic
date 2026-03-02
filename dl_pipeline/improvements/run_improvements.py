@@ -59,7 +59,7 @@ EXCEL_PATH  = str(_DL_DIR.parent / 'Database.xlsx')
 N_S         = 55
 K_SEL       = 6
 TRAIN_RATIO = 0.9
-SIM_DAYS    = 100
+SIM_DAYS    = 131
 SEQ_LEN     = 14
 SEED        = 42
 

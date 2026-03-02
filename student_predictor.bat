@@ -5,22 +5,24 @@ setlocal enabledelayedexpansion
 :menu
 cls
 echo ================================================================
-echo        STUDENT SELECTION PREDICTOR  (M2+ Narrow Adaptive)
+echo           STUDENT SELECTION PREDICTION SYSTEM
 echo ================================================================
 echo.
-echo   1. PREDICT    - Generate 5 candidate groups for a day
+echo   1. PREDICT    - Generate predictions for a day
 echo   2. CORRECT    - Submit actual results after class
-echo   3. STATUS     - View accuracy history
-echo   4. EXIT       - Close program
+echo   3. TRAIN      - Update model with corrections
+echo   4. STATUS     - View current status
+echo   5. EXIT       - Close program
 echo.
 echo ================================================================
 
-set /p choice="Enter your choice (1-4): "
+set /p choice="Enter your choice (1-5): "
 
 if "%choice%"=="1" goto predict
 if "%choice%"=="2" goto correct
-if "%choice%"=="3" goto status
-if "%choice%"=="4" goto exit
+if "%choice%"=="3" goto train
+if "%choice%"=="4" goto status
+if "%choice%"=="5" goto exit
 echo Invalid choice. Please try again.
 timeout /t 2 >nul
 goto menu
@@ -29,14 +31,13 @@ goto menu
 cls
 echo ================================================================
 echo                    GENERATE PREDICTIONS
-echo                  (M2+ Narrow Adaptive, 5 Groups)
 echo ================================================================
 echo.
 set /p day="Enter day number (e.g., 1310): "
 echo.
 echo Generating predictions for Day %day%...
 echo.
-python m2_predictor.py predict %day%
+python prediction_api.py predict %day%
 echo.
 echo ================================================================
 pause
@@ -58,7 +59,31 @@ set /p students="Enter student IDs: "
 echo.
 echo Submitting correction for Day %day%...
 echo.
-python m2_predictor.py correct %day% %students%
+python prediction_api.py correct %day% %students%
+echo.
+echo ================================================================
+pause
+goto menu
+
+:train
+cls
+echo ================================================================
+echo                    UPDATE MODEL
+echo ================================================================
+echo.
+echo This will update the model with all collected corrections.
+echo This should be done every 1-2 weeks.
+echo.
+set /p confirm="Continue? (Y/N): "
+if /i not "%confirm%"=="Y" (
+    echo Training cancelled.
+    timeout /t 2 >nul
+    goto menu
+)
+echo.
+echo Updating model...
+echo.
+python prediction_api.py update
 echo.
 echo ================================================================
 pause
@@ -70,7 +95,7 @@ echo ================================================================
 echo                     SYSTEM STATUS
 echo ================================================================
 echo.
-python m2_predictor.py status
+python prediction_api.py status
 echo.
 echo ================================================================
 pause
@@ -79,7 +104,7 @@ goto menu
 :exit
 cls
 echo.
-echo Thank you for using the M2+ Narrow Adaptive Predictor!
+echo Thank you for using Student Selection Prediction System!
 echo.
 timeout /t 2 >nul
 exit
